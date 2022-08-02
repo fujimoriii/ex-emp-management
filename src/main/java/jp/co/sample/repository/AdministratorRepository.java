@@ -14,7 +14,7 @@ import jp.co.sample.domain.Administrator;
 
 @Repository
 
-public class AdministratorRepositoy {
+public class AdministratorRepository {
 
 	@Autowired
 	private NamedParameterJdbcTemplate template;
