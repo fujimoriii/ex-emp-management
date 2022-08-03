@@ -9,6 +9,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import jp.co.sample.domain.Administrator;
 import jp.co.sample.form.InsertAdministratorForm;
+import jp.co.sample.form.LoginForm;
 import jp.co.sample.service.AdministratorService;
 
 @Controller
@@ -37,6 +38,18 @@ public class AdministratorController {
 		BeanUtils.copyProperties(form, administrator);
 		administratorservice.insert(administrator);
 		return "/";
+
+	}
+
+	@ModelAttribute
+	public LoginForm setUpLoginForm() {
+		LoginForm loginForm = new LoginForm();
+		return loginForm;
+	}
+
+	@RequestMapping("/")
+	public String toLogin() {
+		return "administrator/login";
 
 	}
 }
