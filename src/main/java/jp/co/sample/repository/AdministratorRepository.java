@@ -33,7 +33,8 @@ public class AdministratorRepository {
 
 		SqlParameterSource param = new BeanPropertySqlParameterSource(administrator);
 
-		String sql = "insert into administrators (id,name,mail_address,password)values(:id,:name,:mail_address,:password)";
+		String sql = "insert into administrators (name,mail_address,password)values(:name,:mailAddress,:password)";
+		//BeanPropertyしているやつは新しい値の方はキャメルケースだから注意！
 
 		template.update(sql, param);
 
